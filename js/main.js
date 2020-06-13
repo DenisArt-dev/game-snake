@@ -1,4 +1,6 @@
-// 'use strict';
+'use strict';
+
+alert('Добро пожаловать в игру "Змейка". Чтобы начать, нажмите "\u2190", "\u2191", "\u2192" или "\u2193"');
 
 const canvas = document.getElementById('game'); // обращение к элементу html
 const ctx = canvas.getContext('2d');
@@ -40,8 +42,10 @@ function direction(event) {
 
 function eatTail(head, arr) {
     for(let i = 0; i < arr.length; i++) {
-        if(head.x == arr[i].x && head.y == arr[i].y)
-        clearInterval(game);
+        if(head.x == arr[i].x && head.y == arr[i].y) {
+            clearInterval(game);
+            alert('GAME OWER \nЧтобы сыграть еще, обновите страницу');
+        }
     }
 }
 
@@ -75,8 +79,10 @@ function drawGame() {
     }
 
     if(snakeX < box || snakeX > box * 16
-        || snakeY < box * 2 || snakeY > box * 17)
-        clearInterval(game);
+        || snakeY < box * 2 || snakeY > box * 17) {
+            clearInterval(game);
+            alert('GAME OWER \nЧтобы сыграть еще, обновите страницу');
+        }
 
     if(dir == 'left') snakeX -= box;
     if(dir == 'right') snakeX += box;
@@ -94,4 +100,6 @@ function drawGame() {
 }
 
 let game = setInterval(drawGame, 100); // вызывает функцию каждые 100 милисекунд
+
+
 
