@@ -5,6 +5,12 @@ alert('Добро пожаловать в игру "Змейка". Чтобы н
 const canvas = document.getElementById('game'); // обращение к элементу html
 const ctx = canvas.getContext('2d');
 
+let btn2 = document.getElementById('btn2');
+let btn3 = document.getElementById('btn3');
+let btn1 = document.getElementById('btn1');
+let btn4 = document.getElementById('btn4');
+
+
 const ground = new Image(); // подключение картинки
 ground.src = 'images/map.jpg';
 
@@ -39,6 +45,24 @@ function direction(event) {
     else if (event.keyCode == 40 && dir != 'up')
         dir = 'down';
 }
+
+
+btn2.onclick = function () {
+    if (dir != 'right') dir = 'left';
+};
+
+btn3.onclick = function () {
+    if (dir != 'left') dir = 'right';
+};
+
+btn1.onclick = function () {
+    if (dir != 'down') dir = 'up';
+};
+
+btn4.onclick = function () {
+    if (dir != 'up') dir = 'down';
+};
+
 
 function eatTail(head, arr) {
     for(let i = 0; i < arr.length; i++) {
