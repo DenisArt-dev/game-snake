@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>game</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/media.css">
 </head>
+
 <body>
-    <canvas id="game" width="522" height="551"></canvas>
+
+    <section class="container">
+
+        <canvas id="game" width="522" height="551"></canvas>
+
+        <section class="buttons">
+
+            <button id="btn1" class="button">&#8593</button>
+            <div class="button-rl">
+                <input class="button" id="btn2" type="button" value="&#8592">
+                <!-- <button id="btn2" class="button">&#8592</button> -->
+                <button id="btn3" class="button">&#8594</button>
+            </div>
+            <button id="btn4" class="button">&#8595</button>
+
+        </section>
+
+    </section>
+
     <script src="js/main.js"></script>
 </body>
+
 </html>
